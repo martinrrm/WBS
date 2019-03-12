@@ -119,10 +119,12 @@ for urls in set_pestañas:
     
     counter = counter + 1
 
-    with pd.option_context('display.max_rows', None, 'display.max_columns', None, 'max_colwidth', 800):
-        a = list(set_urls)
-        df = pd.DataFrame(a)
-        print(df)
+    #with pd.option_context('display.max_rows', None, 'display.max_columns', None, 'max_colwidth', 800):
+    #    a = list(set_urls)
+    #    df = pd.DataFrame(a)
+    #    print(df)
+
+    print(len(set_pestañas))
 
 first = 0
 print("INICIALIZANDO SCRAPEO")
@@ -264,10 +266,8 @@ for i in set_urls:
         df3 = pd.concat([df3, df_url],axis=1, join='inner')
         df3 = pd.concat([df3, df_dolar],axis=1, join='inner')
 
-    print(len(df3))
     print(df3)
-    print(first)
-    first = first + 1
+    print(len(df3))
 
     if(len(df3) >= 1):
         df3.to_csv('pruebas.csv')
